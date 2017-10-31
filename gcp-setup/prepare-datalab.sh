@@ -7,3 +7,4 @@ export REGION_ID=europe-west1
 
 #spawn datalab vm
 datalab create dataengvm --disk-size-gb 20 --zone europe-west1-b
+

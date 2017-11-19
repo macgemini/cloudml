@@ -169,22 +169,8 @@ def cnn_model(features, target, mode):
     zip_string = tf.squeeze(features['zip_code'], [1])
     zip_id = table_zip.lookup(zip_string)
     zip_one_hot = tf.one_hot(zip_id, 30, 1.0, 0.0)
-    #padding_zip = tf.constant([[0, 0], [0, 30]])
-    #padded_zip = tf.pad(zip_one_hot, padding_zip)
-    #sliced_zip = tf.slice(padded_zip, [0, 0], [-1, 30])
-
-    ##print("sliced_zip shape")
-    #print(sliced_zip.get_shape())
-
-    #zip_out = tf.contrib.layers.fully_connected(zip_one_hot, 1)
-
 
     zip = tf.contrib.layers.fully_connected(zip_one_hot, 1)
-    
-    #print("zip_out shape")
-    #print(zip_out.get_shape())
-
-    #zip = tf.squeeze(zip_out, [2])
 
     #continuous variables
     avg_rating = features['avg_rating']

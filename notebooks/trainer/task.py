@@ -26,7 +26,7 @@ if __name__ == '__main__':
         '--train_steps',
         help='How many batches to run training job for',
         type=int,
-        default=1000
+        default=400
     )
     parser.add_argument(
         '--job-dir',
